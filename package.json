@@ -17,9 +17,9 @@
     "url": "https://github.com/TobiasAlvz/node-web/issues"
   },
   "homepage": "https://github.com/TobiasAlvz/node-web#readme",
-  "description": "",
   "dependencies": {
     "ejs": "^5.0.2",
     "express": "^5.2.1"
-  }
+  },
+  "description": ""
 }
