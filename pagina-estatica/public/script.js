@@ -1,4 +1,4 @@
-const teste = document
+const test = document
   .getElementById ('test')
   .addEventListener ('click', () => {
     alert ('Este script está funcionando!');

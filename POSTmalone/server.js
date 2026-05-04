@@ -1,50 +1,26 @@
+app.get('/formulario', (req,res) => {
+res.render('form')
+})
+app.use(express.urlencoded({ extended:true }))
 
-const express = require('express');
-const path = require('path');
+app.post('/register', (req,res) => {
+const username=req.body.username
+const password=req.body.password
 
-const app = express();
-const PORT = 3000;
+console.log(username)
+})
 
-// Configuração do EJS
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+conststoredUsers= []
 
-// Middleware para ler dados do formulário
-app.use(express.urlencoded({ extended: true }));
+app.post('/register', (req,res) => {
+const username=req.body.username
+const password=req.body.password
 
-// Simulando banco de dados
-const storedUsers = [];
+storedUsers.push({ username, password })
 
-// Rota inicial (opcional)
-app.get('/', (req, res) => {
-    res.render('index');
-});
+res.redirect('/usuarios')
+})
 
-// Rota para exibir formulário
-app.get('/formulario', (req, res) => {
-    res.render('form');
-});
-
-// Rota POST (recebe dados do formulário)
-app.post('/register', (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
-
-    console.log(username, password);
-
-    // Salvando no "banco"
-    storedUsers.push({ username, password });
-
-    // Redirecionamento
-    res.redirect('/usuarios');
-});
-
-// Rota para listar usuários
-app.get('/usuarios', (req, res) => {
-    res.render('users', { users: storedUsers });
-});
-
-// Inicialização do servidor
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+app.get('/usuarios', (req,res) => {
+res.render('users', { users:storedUsers })
+})

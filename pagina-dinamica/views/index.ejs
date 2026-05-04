@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title><%= title %></title>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+</head>
 
-    <body>
-        <h1>Renderizando HTML Dinâmico com EJS</h1>
+<body>
+  <h1>Renderizando HTML Dinâmico com EJS</h1>
 
-        <p><%= message %></p>
+  <p><%= message %></p>
 
-        <!-- Condicional -->
-        <% if (true) { %>
-        <p>Verdadeiro</p>
-        <% } else { %>
-        <p>Falso</p>
-        <% } %>
+  <!-- Condicional -->
+  <% if (true) { %>
+    <p>Verdadeiro</p>
+  <% } else { %>
+    <p>Falso</p>
+  <% } %>
 
-        <!-- Loop -->
-        
-        <ul>
-            <!-- inicialização, condição, incremento   -->
-            <% for (let index = 0; index <= 10; index++) { %>
-            <li>
-                4 * <%= index %> = <%= 4 * index %>
-            </li>
-            <% } %>
-        </ul>
-    </body>
+  <!-- Loop -->
+  <ul>
+    <% for (let index = 0; index <= 10; index++) { %>
+      <li>
+        4 * <%= index %> = <%= 4 * index %>
+      </li>
+    <% } %>
+  </ul>
+</body>
 </html>
