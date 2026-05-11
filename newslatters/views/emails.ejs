@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de E-mails</title>
+</head>
+
+<body>
+  <h1>Lista de E-mails</h1>
+
+  <ul>
+    <% emails.forEach((email, index) => { %>
+      <li>
+        <%= email %>
+
+        <form action="/deletar/<%= index %>" method="POST" style="display:inline;">
+          <button type="submit">
+            Excluir
+          </button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+
+  <br>
+
+  <a href="/">
+    Voltar para cadastro
+  </a>
+</body>
+</html>
